@@ -65,7 +65,7 @@
 ---
 
 ## 6. Short Assessment Questions
-#4: Short Assessment Questions
+
 1. What is the difference between `>`, `>>`, and `&>`?
 
 - `>`: Redirects standard output (stdout) to a file, with a new overwrite.
@@ -99,9 +99,11 @@
 ## Screenshots 
 
 ![Tirmenal](2.png)
+---
 ![Tirmenal](3.png)
 
 ### Git Log
 
 ![git log](4.png)
+---
 ![git log --oneline](1.png)
