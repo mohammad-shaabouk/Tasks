@@ -96,6 +96,12 @@
 
 - To allow caching of key passwords to avoid having to enter them every time you connect to the servers.
 
-## Screenshots
+## Screenshots 
+
+![Tirmenal](2.png)
+![Tirmenal](3.png)
 
 ### Git Log
+
+![git log](4.png)
+![git log --oneline](1.png)
