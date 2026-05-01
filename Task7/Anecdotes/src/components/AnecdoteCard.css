@@ -1,0 +1,128 @@
+.anecdote-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  position: relative;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.anecdote-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(46, 204, 113, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(46, 204, 113, 0.3);
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center,
+      rgba(46, 204, 113, 0.1) 0%,
+      transparent 70%);
+  animation: rotateGlow 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.quote-marks {
+  font-size: 5rem;
+  line-height: 1;
+  opacity: 0.2;
+  font-style: italic;
+  color: var(--soft-mint);
+  user-select: none;
+}
+
+.opening-mark {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+.closing-mark {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+}
+
+.anecdote-text {
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+  margin: 1rem 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .anecdote-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .anecdote-text {
+    font-size: 1.3rem;
+  }
+
+  .quote-marks {
+    font-size: 3rem;
+  }
+}

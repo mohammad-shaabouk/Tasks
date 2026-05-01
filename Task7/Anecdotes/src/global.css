@@ -1,0 +1,144 @@
+:root {
+  --deep-teal: #0f2027;
+  --emerald: #2ecc71;
+  --mint: #a8ff78;
+  --coral: #ff7e5f;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, var(--deep-teal), var(--emerald), var(--mint), var(--coral));
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app-container {
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.top-card {
+  border: 2px solid var(--mint);
+  box-shadow: 0 0 20px var(--mint);
+}
+
+.quote {
+  font-size: 1.4em;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.vote-section {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.glow-button {
+  background: linear-gradient(45deg, var(--emerald), var(--coral));
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+.glow-button:active {
+  transform: scale(0.95);
+}
+
+.vote-counter {
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-shadow: 0 0 10px var(--mint);
+}
+
+.glow-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px var(--mint);
+  }
+
+  50% {
+    text-shadow: 0 0 20px var(--coral);
+  }
+
+  100% {
+    text-shadow: 0 0 10px var(--mint);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.placeholder {
+  font-style: italic;
+  opacity: 0.7;
+}
