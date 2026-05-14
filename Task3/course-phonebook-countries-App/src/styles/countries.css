@@ -1,0 +1,217 @@
+.page--countries {
+  background:
+    linear-gradient(140deg, rgba(6, 182, 212, 0.18), transparent 30%),
+    linear-gradient(180deg, #0d0a1e 0%, #10091f 46%, #03050d 100%);
+  color: var(--world-primary);
+}
+
+.page--countries .page-hero h1,
+.page--countries .page-hero p:last-child {
+  color: var(--text-primary);
+}
+
+.world-search {
+  backdrop-filter: var(--glass-blur);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(6, 182, 212, 0.24);
+  border-radius: var(--radius-sm);
+  display: grid;
+  margin: var(--space-xl) 0 var(--space-md);
+  max-width: 760px;
+  padding: var(--space-md);
+}
+
+.world-search input {
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+}
+
+.region-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.region-tabs button {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(6, 182, 212, 0.24);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-weight: 800;
+  min-height: 42px;
+  padding: 0 16px;
+  transition: background var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.region-tabs button:hover {
+  transform: translateY(-2px);
+}
+
+.region-tabs button.is-active {
+  background: rgba(6, 182, 212, 0.2);
+  box-shadow: 0 0 28px var(--world-glow);
+  color: #cffafe;
+}
+
+.popular-countries {
+  display: grid;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.popular-countries__row,
+.countries-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.country-card {
+  backdrop-filter: var(--glass-blur);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(6, 182, 212, 0.22);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.24);
+  color: var(--text-primary);
+  min-height: 100%;
+  overflow: hidden;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.country-card:hover {
+  border-color: rgba(6, 182, 212, 0.48);
+  box-shadow: 0 0 34px var(--world-glow), 0 22px 54px rgba(0, 0, 0, 0.24);
+}
+
+.country-card img {
+  aspect-ratio: 16 / 10;
+  background: rgba(255, 255, 255, 0.08);
+  object-fit: cover;
+  width: 100%;
+}
+
+.country-card__body {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+.country-card h3 {
+  font-size: 1.16rem;
+  line-height: 1.2;
+}
+
+.country-card dl,
+.detail-stats {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+.country-card dl div,
+.detail-stats div {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: space-between;
+}
+
+.country-card dt,
+.detail-stats dt {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}
+
+.country-card dd,
+.detail-stats dd {
+  font-weight: 700;
+  margin: 0;
+  text-align: right;
+}
+
+.country-card button {
+  background: rgba(6, 182, 212, 0.16);
+  border: 1px solid rgba(6, 182, 212, 0.32);
+  border-radius: var(--radius-pill);
+  color: #cffafe;
+  font-weight: 800;
+  min-height: 42px;
+}
+
+.country-detail {
+  color: var(--text-primary);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.country-detail img {
+  border-radius: var(--radius-sm);
+  max-height: 260px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.country-detail p {
+  color: var(--text-muted);
+}
+
+.country-detail strong {
+  color: var(--text-primary);
+}
+
+.skeleton-card {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+.skeleton {
+  animation: shimmer 1.2s ease-in-out infinite;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  background-size: 220% 100%;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.skeleton--flag {
+  aspect-ratio: 16 / 10;
+}
+
+.skeleton--line {
+  height: 14px;
+}
+
+.skeleton--line.short {
+  width: 62%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 220% 0;
+  }
+  to {
+    background-position: -220% 0;
+  }
+}
+
+@media (max-width: 1180px) {
+  .countries-grid,
+  .popular-countries__row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .countries-grid,
+  .popular-countries__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .countries-grid,
+  .popular-countries__row {
+    grid-template-columns: 1fr;
+  }
+}

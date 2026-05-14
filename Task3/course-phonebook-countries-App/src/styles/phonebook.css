@@ -1,0 +1,204 @@
+.page--phonebook {
+  background:
+    linear-gradient(140deg, rgba(16, 185, 129, 0.2), transparent 34%),
+    linear-gradient(180deg, #0a1a0f 0%, #07120c 52%, #040805 100%);
+  color: var(--phone-primary);
+}
+
+.page--phonebook .page-hero h1,
+.page--phonebook .page-hero p:last-child {
+  color: var(--text-primary);
+}
+
+.stats-bar {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: var(--space-xl) 0 var(--space-lg);
+  max-width: 860px;
+}
+
+.stats-bar div {
+  backdrop-filter: var(--glass-blur);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+  color: var(--text-primary);
+  display: grid;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+}
+
+.stats-bar span {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.stats-bar strong {
+  color: var(--phone-primary);
+  font-size: 2rem;
+}
+
+.search-bar,
+.contact-form {
+  backdrop-filter: var(--glass-blur);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.24);
+}
+
+.search-bar {
+  display: grid;
+  margin: var(--space-lg) 0;
+  max-width: 860px;
+  padding: var(--space-md);
+}
+
+.search-bar input {
+  border-radius: var(--radius-pill);
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 0 4px var(--phone-glow), 0 22px 54px rgba(0, 0, 0, 0.24);
+}
+
+.contact-form {
+  align-items: end;
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr 1fr 160px auto;
+  margin-bottom: var(--space-xl);
+  max-width: 1060px;
+  padding: var(--space-md);
+}
+
+.favorites-section {
+  display: grid;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.favorites-row,
+.contacts-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.favorites-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contacts-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-card {
+  backdrop-filter: var(--glass-blur);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.24);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.24);
+  color: var(--text-primary);
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: var(--space-md);
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.contact-card--compact {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.contact-avatar {
+  align-items: center;
+  background: linear-gradient(135deg, #10b981, #bef264);
+  border-radius: var(--radius-sm);
+  color: #052e16;
+  display: inline-flex;
+  font-weight: 900;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+
+.contact-card__body {
+  display: grid;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.contact-card h3,
+.contact-card p {
+  overflow-wrap: anywhere;
+}
+
+.contact-card h3 {
+  font-size: 1.08rem;
+}
+
+.contact-card p {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.category-badge {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-pill);
+  color: #dcfce7;
+  font-size: 0.76rem;
+  font-weight: 800;
+  justify-self: start;
+  padding: 4px 10px;
+}
+
+.category-badge--family {
+  background: rgba(16, 185, 129, 0.18);
+}
+
+.category-badge--work {
+  background: rgba(59, 130, 246, 0.18);
+}
+
+.category-badge--friends {
+  background: rgba(190, 242, 100, 0.16);
+}
+
+.category-badge--study {
+  background: rgba(45, 212, 191, 0.16);
+}
+
+.contact-card__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  grid-column: 1 / -1;
+}
+
+.contact-card--compact .contact-card__actions {
+  grid-column: auto;
+}
+
+@media (max-width: 1100px) {
+  .contacts-grid,
+  .favorites-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .stats-bar,
+  .contacts-grid,
+  .favorites-row,
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}
